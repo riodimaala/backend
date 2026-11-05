@@ -4,7 +4,7 @@ import express from 'express';
 const bookRoutes = express.Router();
 
 bookRoutes.get('/all', bookController.getAllBooks);
-bookRoutes.post('/', bookController.createBooks);
+bookRoutes.post('/', bookController.createBook);
 bookRoutes.put('/:id', bookController.editBook);
 bookRoutes.delete('/:id', bookController.deleteBook);
 
