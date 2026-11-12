@@ -1,8 +1,24 @@
 import pool from '../config/db.js';
 
+//READ
 export const fetchAllStudents = async () => {
     const [rows] = await pool.query('SELECT * FROM student');
     return rows;
+};
+
+//Find student by id
+export const findStudentById = async (id) => {
+  const [rows] = await pool.query("SELECT * FROM student WHERE id = ?",
+    [id]
+  );
+  return rows;
+};
+
+export const findBookByNameAndAuthor = async (book) => {
+  const [rows] = await pool.query( "SELECT * FROM book WHERE name = ? AND author = ?",
+    [book.name, book.author]
+  );
+  return rows;
 };
 
 //insert

@@ -6,6 +6,7 @@ export const getAllBooks = async (req, res) => {
     res.status(200).json(books);
 }
 
+//CREATE
 export const createBook = async (req, res) => {
     const { name, author } = req.body;
     const book = { name, author };
@@ -24,6 +25,7 @@ export const createBook = async (req, res) => {
     }
 }
 
+//EDIT 
 export const editBook = async (req, res) => {
     const { id } = req.params;
     const { name, author } = req.body;
@@ -43,6 +45,7 @@ export const editBook = async (req, res) => {
 
 }    } 
 
+//DELETE
 export const deleteBook = async (req, res) => {
     const { id } = req.params; 
 
