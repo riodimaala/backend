@@ -3,10 +3,15 @@ import bookRoutes from "./routes/bookRoutes.js";
 import studentRoutes from "./routes/studentRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 
+let corsOption ={
+    origin : "http://localhost:5173",
+};
 
 //create express app
 const app = express();
+
 app.use(express.json());
+app.use(cors(corsOption));
 
 /* routes implementation */
 app.use('/book', bookRoutes);
